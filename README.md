@@ -48,7 +48,7 @@ Go into your theme folder and open either:
 
 ### Manual Installation
 
-After cloning the repo add the files `user.css`, `color.ini` and `theme.js` into a new folder named `Galaxy`, and place this folder into your `Themes` folder in `%localappdata%\spicetify`.
+After cloning the repo add the files `user.css`, `color.ini` and `theme.js` into a new folder named `miau`, and place this folder into your `Themes` folder in `%localappdata%\spicetify`.
 
 Then run these commands to apply:
 
