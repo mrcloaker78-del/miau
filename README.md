@@ -6,7 +6,7 @@
 
 ### Dynamic Album Art
 
-<img src="" width="100%">
+<img src="https://github.com/mrcloaker78-del/miau/assets/default_bg.gif" width="100%">
 
 ---
 
