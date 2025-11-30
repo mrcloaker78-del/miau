@@ -750,48 +750,80 @@ POPUP MODAL
 .main-playlistEditDetailsModal-textElement:focus {
     background-color: rgba(var(--spice-rgb-selected-row), 0.1);
 }
-/*
+/* 
 -------------------
-BACKGROUND ELEMENTS 
+BACKGROUND ELEMENTS (FORCE default_bg.gif) 
 -------------------
 */
+
+/* Fullscreen container */
 .bg-main-container {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    pointer-events: none;
+    z-index: -1;
 }
+
+/* Dark gradient overlay so UI is readable */
 .bg-main-shadow {
-    background: linear-gradient(rgba(0, 0, 0, 0.196) 203px, rgba(0, 0, 0, 0.518) 474px, rgba(0, 0, 0, 0.596) 700px) !important;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.196) 203px,
+        rgba(0, 0, 0, 0.518) 474px,
+        rgba(0, 0, 0, 0.596) 700px
+    ) !important;
     position: absolute;
     width: 100%;
     height: 100%;
 }
+
+/* Main background image container – LOCKED to default_bg.gif */
 .bg-image-container {
-    -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0.75) 0px, rgba(0, 0, 0, 0.1) 100%);
+    -webkit-mask-image: linear-gradient(
+        rgba(0, 0, 0, 0.75) 0px,
+        rgba(0, 0, 0, 0.1) 100%
+    );
     height: 100%;
     width: 100%;
     position: absolute;
+
+    background-image: url("asset/default_bg.gif") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
 }
+
+/* Kill any dynamic image Spotify/Extensions try to inject */
 img.bg-main-image {
+    content: url("asset/default_bg.gif") !important;
     width: 100%;
     position: absolute;
     height: 100%;
     object-fit: cover;
-    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.9) 0, black 250px, black calc(100% - 250px), rgba(0, 0, 0, 0.9) 100%);
+    -webkit-mask-image: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.9) 0,
+        black 250px,
+        black calc(100% - 250px),
+        rgba(0, 0, 0, 0.9) 100%
+    );
+    opacity: 1 !important;
 }
+
+/* Remove separate lyrics background so only our gif shows */
 .lyrics-lyrics-background {
-    display: none;
+    display: none !important;
 }
-.lyrics-lyricsContainer-LyricsContainer{
-    --lyrics-color-background:none !important;
+.lyrics-lyricsContainer-LyricsContainer {
+    --lyrics-color-background: none !important;
 }
-/* blur background when option is enabled */
+
+/* Blur toggle still works */
 .bg-main-shadow.blur-enabled {
     backdrop-filter: blur(8px);
 }
-/*
 -------------------
 HOME POPUP 
 -------------------
@@ -1238,4 +1270,21 @@ THIRD PARTY EXTENSIONS/APPS
 
 .app-module__stats___LylvR_eternalDjukebox {
     padding-bottom: 110px;
+}
+
+/*
+-------------------
+GLOBAL BACKGROUND LOCK
+-------------------
+*/
+html,
+body,
+.Root__main-view,
+.Root__top-container,
+.bg-main-container {
+    background-image: url("asset/default_bg.gif") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
 }
