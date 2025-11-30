@@ -1,0 +1,15 @@
+{
+  "name": "miau",
+  "description": "this took way to long to make because im dumb",
+  "preview": "preview_playlist.gif",
+  "readme": "README.md",
+  "usercss": "user.css",
+  "schemes": "color.ini",
+  "include": ["https://raw.githubusercontent.com/harbassan/spicetify-galaxy/main/theme.js"],
+  "authors": [
+    {
+      "name": "harbassan",
+      "url": "https://github.com/harbassan"
+    }
+  ]
+}
