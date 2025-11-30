@@ -1,31 +1,31 @@
-# Spicetify Galaxy
+# MIAU
 
-### A fully dynamic and customisable theme that uses fullscreen images to greatly improve your Spotify experience.
+### A fully dynamic and customisable theme that uses fullscreen images to greatly improve your MIAU experience.
 
 ---
 
 ### Dynamic Album Art
 
-<img src="preview_dynamic.gif" width="100%">
+<img src="https://files.catbox.moe/3gse14.gif" width="100%">
 
 ---
 
 ### Custom Backgrounds <span style="font-size: 0.5em">(per playlist or app wide)</span>
 
-![preview](preview_playlist.png)
+![preview](https://files.catbox.moe/3gse14.gif)
 
 ---
 
 ### Fullscreen Artist/Album Backgrounds
 
-![preview](preview.png)
-![preview](preview_album.png)
+![preview](https://files.catbox.moe/3gse14.gif)
+![preview](https://files.catbox.moe/3gse14.gif)
 
 ---
 
 ### Fully Customisable
 
-![preview](preview_custom.png)
+![preview](https://files.catbox.moe/3gse14.gif)
 
 #### How to Customise
 
@@ -34,10 +34,7 @@ Note that if you select locally downloaded images for the backgrounds, there wil
 
 There are multiple options in the home page settings (top left corner) which provide further customisations. These include:
 
--   adding blur (two seperate options for home vs other pages)
--   use of the currently playing song as page backgrounds
--   use of a single image across all of the app
--   adding/removing the album/playlist header image
+-   catmiau
 
 ##### How to edit the source
 
@@ -51,12 +48,12 @@ Go into your theme folder and open either:
 
 ### Manual Installation
 
-After cloning the repo add the files `user.css`, `color.ini` and `theme.js` into a new folder named `Galaxy`, and place this folder into your `Themes` folder in `%localappdata%\spicetify`.
+After cloning the repo add the files `user.css`, `color.ini` and `theme.js` into a new folder named `miau`, and place this folder into your `Themes` folder in `%localappdata%\spicetify`.
 
 Then run these commands to apply:
 
 ```powershell
-spicetify config current_theme Galaxy
+spicetify config current_theme miau
 spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
 spicetify apply
 ```
@@ -66,7 +63,7 @@ To enable the extension (which is a necessary step), add the file `extension.js`
 Then run the commands:
 
 ```powershell
-spicetify config extensions galaxy.js
+spicetify config extensions miau.js
 spicetify apply
 ```
 
