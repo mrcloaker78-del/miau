@@ -1,78 +1,31 @@
-# MIAU
+STUPID CAT THEME 🐈
 
-### A fully dynamic and customisable theme that uses fullscreen images to greatly improve your MIAU experience.
+Look at him. Look at this absolute unit.
 
----
+This theme was built for one purpose: to plaster this stupid freaking cat GIF all over your Spotify client.
 
-### Dynamic Album Art
+INSTALLATION (READ THIS OR IT WON'T WORK)
 
-<img src="https://files.catbox.moe/3gse14.gif" width="100%">
+Take the folder containing these files.
 
----
+Put it in your Spicetify Themes folder.
 
-### Custom Backgrounds <span style="font-size: 0.5em">(per playlist or app wide)</span>
+CRITICAL STEP: You must have the file miau-ezgif.com-resize.gif inside this theme folder. If you lose the cat, you lose the theme.
 
-![preview](https://files.catbox.moe/3gse14.gif)
+Open your terminal/powershell.
 
----
+Run:
 
-### Fullscreen Artist/Album Backgrounds
-
-![preview](https://files.catbox.moe/3gse14.gif)
-![preview](https://files.catbox.moe/3gse14.gif)
-
----
-
-### Fully Customisable
-
-![preview](https://files.catbox.moe/3gse14.gif)
-
-#### How to Customise
-
-To change the home background image or playlist background images click the edit button which shows up on the top left of the page. This will open a menu where you can input the image, either by entering the url (the recommended option) or choosing a locally downloaded image. If there is no custom image set for a playlist it will default to the playlist cover image.
-Note that if you select locally downloaded images for the backgrounds, there will be a limited space. Therefore using urls is much better.
-
-There are multiple options in the home page settings (top left corner) which provide further customisations. These include:
-
--   catmiau
-
-##### How to edit the source
-
-Go into your theme folder and open either:
-
-`color.ini` to modify the colors
-
-`user.css` to modify the style code
-
----
-
-### Manual Installation
-
-After cloning the repo add the files `user.css`, `color.ini` and `theme.js` into a new folder named `miau`, and place this folder into your `Themes` folder in `%localappdata%\spicetify`.
-
-Then run these commands to apply:
-
-```powershell
-spicetify config current_theme miau
-spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
+spicetify config current_theme StupidCat
 spicetify apply
-```
 
-To enable the extension (which is a necessary step), add the file `extension.js` into the `Extensions` folder in `%localappdata%\spicetify`.
 
-Then run the commands:
+FEATURES
 
-```powershell
-spicetify config extensions miau.js
-spicetify apply
-```
+Infinite Cats: The background is just the cat. Over and over again.
 
----
+Spinning Vinyl: The cover art spins. Why? Because I said so.
 
-If you have any questions or issues regarding the theme open an issue on this repo. Please specify your spicetify version and installation method if you do so.
+High Contrast: Black and white, like the cat's soul.
 
-If you really like the theme i'd be grateful if you liked the repo ❤️.,
-
--harbassan
-
-^^^ I stole this shamelessly please go show this guy some love all of these SHOULD work with the miau theme
+If you don't like it, change it yourself.
