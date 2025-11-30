@@ -1,60 +1,66 @@
-/* STUPID CAT THEME 
-   Created for the sole purpose of looking at this cat.
+/* STUPID CAT THEME - FIXED
+   Now with more aggression to force the background to show.
 */
 
 :root {
   --cat-bg: url("miau-ezgif.com-resize.gif");
 }
 
-/* --- THE BACKGROUND --- */
-/* Nuke the default background color */
-.Root__main-view, 
-.Root__top-container,
-.main-view-container__scroll-node-child {
-    background-color: transparent !important;
-}
-
-/* Apply the cat everywhere */
-body {
+/* --- THE BACKGROUND FIX --- */
+/* We apply the background to the absolute root and body */
+body, html, .Root {
     background-image: var(--cat-bg) !important;
-    background-repeat: repeat !important; /* INFINITE CATS */
-    background-size: 150px !important; /* Make them small and annoying */
+    background-repeat: repeat !important;
+    background-size: 150px !important; 
     background-attachment: fixed !important;
+    background-color: #000 !important; /* Fallback */
 }
 
-/* Add a dark overlay so you can actually read text */
-.Root__main-view::before {
+/* --- TRANSPARENCY NUKE --- */
+/* These are the layers that usually cover the background. We force them transparent. */
+.Root__top-container,
+.Root__main-view,
+.main-view-container,
+.main-view-container__scroll-node,
+.main-view-container__scroll-node-child,
+.os-host,
+.os-padding,
+.os-viewport,
+.os-content,
+.main-home-homeHeader,
+.main-entityHeader-container {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Darken the chaos slightly so you can read text */
+.Root__top-container::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Darken the cats */
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: -1;
     pointer-events: none;
 }
 
-/* --- THE PLAYER BAR --- */
+/* --- SIDEBAR & PLAYER FIXES --- */
+.Root__nav-bar, 
 .main-nowPlayingBar-container {
-    background-color: #000000 !important;
-    border-top: 2px solid #ffffff;
+    background-color: rgba(0,0,0,0.9) !important; /* Make these slightly opaque */
 }
 
-/* --- SIDEBAR --- */
-.Root__nav-bar {
-    background-color: rgba(0,0,0,0.8) !important;
-}
-
-/* --- IMAGES & CRAP --- */
-/* Make cover art round because why not */
+/* --- EXTRAS --- */
+/* Round cover art */
 .main-coverSlotExpanded-container img,
 .main-nowPlayingWidget-coverArt .main-coverSlotCollapsed-container .cover-art-image {
     border-radius: 50% !important;
     border: 2px solid #fff;
 }
 
-/* Spin the cover art when playing (optional stupidity) */
+/* Spin animation */
 @keyframes spin { 
     from { transform: rotate(0deg); } 
     to { transform: rotate(360deg); } 
@@ -63,19 +69,10 @@ body {
     animation: spin 4s linear infinite;
 }
 
-/* --- TEXT COLORS --- */
-/* Force everything white/grey to pop against the void */
+/* Text visibility */
 .main-entityHeader-title,
 .main-trackList-rowTitle,
 .main-type-ballad {
     color: #ffffff !important;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* --- BUTTONS --- */
-.main-playButton-PlayButton,
-.main-topBar-background-color {
-    background-color: #ffffff !important;
-    color: #000000 !important;
+    text-shadow: 0 0 10px #000;
 }
