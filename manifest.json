@@ -5,11 +5,11 @@
   "readme": "README.md",
   "usercss": "user.css",
   "schemes": "color.ini",
-  "include": ["https://raw.githubusercontent.com/harbassan/spicetify-galaxy/main/theme.js"],
+  "include": ["https://github.com/mrcloaker78-del/miau/main/theme.js"],
   "authors": [
     {
-      "name": "harbassan",
-      "url": "https://github.com/harbassan"
+      "name": "cloaker78",
+      "url": "https://guns.lol/cloaker78"
     }
   ]
 }

@@ -74,4 +74,8 @@ spicetify apply
 
 If you have any questions or issues regarding the theme open an issue on this repo. Please specify your spicetify version and installation method if you do so.
 
-If you really like the theme i'd be grateful if you liked the repo ❤️.
+If you really like the theme i'd be grateful if you liked the repo ❤️.,
+
+-harbassan
+
+^^^ I stole this shamelessly please go show this guy some love all of these SHOULD work with the miau theme
