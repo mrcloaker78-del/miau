@@ -1,12 +1,12 @@
-# Spicetify Galaxy
+# MIAU
 
-### A fully dynamic and customisable theme that uses fullscreen images to greatly improve your Spotify experience.
+### A fully dynamic and customisable theme that uses fullscreen images to greatly improve your MIAU experience.
 
 ---
 
 ### Dynamic Album Art
 
-<img src="preview_dynamic.gif" width="100%">
+<img src="" width="100%">
 
 ---
 
