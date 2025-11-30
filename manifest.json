@@ -1,0 +1,15 @@
+{
+  "name": "Miau",
+  "description": "Simple Spicetify theme that uses a looping cat GIF as the global background.",
+  "preview": "preview_playlist.png",
+  "readme": "README.md",
+  "usercss": "user.css",
+  "schemes": "color.ini",
+  "include": ["theme.js"],
+  "authors": [
+    {
+      "name": "Cloaker + ChatGPT",
+      "url": "https://spicetify.app"
+    }
+  ]
+}

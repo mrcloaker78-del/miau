@@ -1,78 +1,150 @@
-/* STUPID CAT THEME - FIXED
-   Now with more aggression to force the background to show.
-*/
+/* MIAU THEME – static cat GIF background */
 
+/* Basic scrollbar size (kept from old theme) */
 :root {
-  --cat-bg: url("miau-ezgif.com-resize.gif");
+    --scrollbar-vertical-size: 10px;
 }
 
-/* --- THE BACKGROUND FIX --- */
-/* We apply the background to the absolute root and body */
-body, html, .Root {
-    background-image: var(--cat-bg) !important;
-    background-repeat: repeat !important;
-    background-size: 150px !important; 
-    background-attachment: fixed !important;
-    background-color: #000 !important; /* Fallback */
-}
-
-/* --- TRANSPARENCY NUKE --- */
-/* These are the layers that usually cover the background. We force them transparent. */
-.Root__top-container,
-.Root__main-view,
-.main-view-container,
-.main-view-container__scroll-node,
-.main-view-container__scroll-node-child,
-.os-host,
-.os-padding,
-.os-viewport,
-.os-content,
-.main-home-homeHeader,
-.main-entityHeader-container {
-    background-color: transparent !important;
-    background: transparent !important;
-}
-
-/* Darken the chaos slightly so you can read text */
-.Root__top-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+/* Make the whole document fill the viewport */
+html,
+body {
+    margin: 0;
+    padding: 0;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Safety: default dark background behind the GIF */
+body {
+    background: #000;
+    color: #fff;
+}
+
+/* ------------------------------
+   GLOBAL BACKGROUND: CAT GIF
+   ------------------------------ */
+
+/* Fixed layer behind everything that shows the GIF */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
     z-index: -1;
+    background-image: url("assets/default_bg.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     pointer-events: none;
 }
 
-/* --- SIDEBAR & PLAYER FIXES --- */
-.Root__nav-bar, 
-.main-nowPlayingBar-container {
-    background-color: rgba(0,0,0,0.9) !important; /* Make these slightly opaque */
+/* ------------------------------
+   MAKE SPOTIFY UI TRANSPARENT
+   ------------------------------ */
+
+/* Root containers */
+.Root__top-container,
+.Root__nav-bar,
+.Root__main-view,
+.Root__right-sidebar,
+.main-view-container__scroll-node,
+.main-buddyFeed-friendsFeedContainer,
+.main-nowPlayingBar-container,
+.main-nowPlayingView-section {
+    background: transparent !important;
 }
 
-/* --- EXTRAS --- */
-/* Round cover art */
-.main-coverSlotExpanded-container img,
-.main-nowPlayingWidget-coverArt .main-coverSlotCollapsed-container .cover-art-image {
-    border-radius: 50% !important;
-    border: 2px solid #fff;
+/* Various header / bar backgrounds */
+.Root__fixed-top-bar,
+.main-topBar-background,
+.main-actionBarBackground-background,
+.main-entityHeader-background,
+.main-entityHeader-overlay,
+.main-entityHeader-backgroundColor,
+.lyrics-lyrics-background {
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
-/* Spin animation */
-@keyframes spin { 
-    from { transform: rotate(0deg); } 
-    to { transform: rotate(360deg); } 
-}
-.main-nowPlayingWidget-coverArt {
-    animation: spin 4s linear infinite;
+/* Cards, lists, and chips slightly tinted so text is readable */
+.main-card-card,
+.main-card-cardContainer,
+.view-homeShortcutsGrid-shortcut,
+.main-yourLibraryX-listItem,
+.BoxComponent-group-tinted-listRow-isInteractive-hasLeadingOrMedia-paddingBlockStart_8px-paddingBlockEnd_8px-minBlockSize_56px-padding_8px,
+.BoxComponent-group-tinted-listRow-isInteractive-paddingBlockStart_4px-paddingBlockEnd_4px-minBlockSize_32px-padding_4px_8px,
+.search-searchCategory-SearchCategory,
+.x-settings-equalizerSection {
+    background-color: rgba(0, 0, 0, 0.55) !important;
 }
 
-/* Text visibility */
-.main-entityHeader-title,
-.main-trackList-rowTitle,
-.main-type-ballad {
+/* Hover/selected row gradient (kept simple) */
+.main-trackList-trackListRow:hover,
+.main-trackList-trackListRow.main-trackList-selected,
+.BoxComponent-group-tinted-listRow-isInteractive-hasLeadingOrMedia-paddingBlockStart_8px-paddingBlockEnd_8px-minBlockSize_56px-padding_8px:hover::after,
+.BoxComponent-group-tinted-listRow-isInteractive-paddingBlockStart_4px-paddingBlockEnd_4px-minBlockSize_32px-padding_4px_8px:hover::after {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.12) 30%,
+        rgba(255, 255, 255, 0.12) 60%,
+        transparent 100%
+    ) !important;
+}
+
+/* Now playing bar panels */
+.main-nowPlayingBar-left,
+.main-nowPlayingBar-center,
+.main-nowPlayingBar-right,
+.main-connectBar-connectBar {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Friend activity / right sidebar panels */
+.main-buddyFeed-friendsFeedContainer,
+.fAte2d0xETy7pnDUAgHY {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Search bar styling */
+.main-topBar-searchBar input.x-searchInput-searchInputInput {
+    background-color: rgba(0, 0, 0, 0.6) !important;
     color: #ffffff !important;
-    text-shadow: 0 0 10px #000;
+    border-radius: 8px;
+}
+
+/* Simple pill buttons / chips */
+span.ChipInner__ChipInnerComponent-sc-1ly6j4j-0,
+button.x-sortBox-sortDropdown,
+button.x-filterBox-expandButton,
+button.ChipClear__ChipClearComponent-sc-zv5btm-0 {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+}
+
+/* Remove random borders/shadows that clash with the background */
+.GenericModal,
+.GenericModal__overlay,
+.main-trackCreditsModal-container,
+.main-playlistEditDetailsModal-content {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Ensure lyrics section isn't throwing a solid background */
+.lyrics-lyricsContainer-LyricsContainer {
+    --lyrics-color-background: transparent !important;
+}
+
+/* Slight transparency for user avatar etc. */
+img.main-avatar-image {
+    opacity: 0.9;
+}
+
+/* Keep scroll fades working but transparent */
+[fade="top"],
+[fade="bottom"],
+[fade="full"] {
+    -webkit-mask-image: none;
 }
